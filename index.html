@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内装工事・原状回復工事なら｜株式会社コネクトリア</title>
+  <meta name="description" content="内装工事・原状回復工事のプロフェッショナル。クロス貼り替え、フローリング張り替え、原状回復まで一貫施工管理。株式会社コネクトリア">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: #333; line-height: 1.8; background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; width: 100%;
+      height: 70vh; min-height: 400px; max-height: 650px;
+      overflow: hidden;
+    }
+    .hero-logo { position: absolute; top: 15px; left: 15px; z-index: 20; }
+    .hero-logo img { height: 70px; width: auto; }
+
+    .hero-nav {
+      position: absolute; top: 15px; right: 15px; z-index: 20;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+    }
+    .hamburger {
+      width: 36px; cursor: pointer;
+      display: flex; flex-direction: column; gap: 7px; padding: 5px 0;
+    }
+    .hamburger span { display: block; width: 100%; height: 2.5px; background: #555; }
+    .hero-line-btn {
+      display: flex; align-items: center;
+      background: #06C755; border-radius: 10px; overflow: hidden;
+      width: 60px; height: 60px; justify-content: center;
+    }
+    .hero-line-btn svg { width: 36px; height: 36px; fill: #fff; }
+    .hero-line-label {
+      font-size: 10px; color: #555; text-align: center; margin-top: 3px; font-weight: 600;
+    }
+
+    /* Slider */
+    .slider-container { width: 100%; height: 100%; position: relative; }
+    .slider-slides { width: 100%; height: 100%; position: relative; }
+    .slider-slide {
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity 1s ease-in-out;
+    }
+    .slider-slide.active { opacity: 1; }
+    .slider-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .slider-dots {
+      position: absolute; bottom: 18px; left: 50%;
+      transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;
+    }
+    .slider-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); border: 1.5px solid rgba(255,255,255,0.7);
+      cursor: pointer; transition: background 0.3s;
+    }
+    .slider-dot.active { background: rgba(255,255,255,0.9); }
+
+    /* ===== ABOUT ===== */
+    .about { padding: 50px 20px 40px; }
+    .about-inner { max-width: 700px; margin: 0 auto; }
+    .about-top {
+      display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px;
+    }
+    .about-label {
+      flex-shrink: 0;
+      background: #4a4540; color: #fff;
+      padding: 14px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px; font-weight: 600; letter-spacing: 3px;
+      line-height: 1;
+    }
+    .about-heading {
+      font-size: 20px; font-weight: 700; line-height: 1.7; color: #333;
+    }
+    .about-desc {
+      font-size: 13px; line-height: 2.1; color: #555; margin-bottom: 25px;
+    }
+    .about-note {
+      font-size: 12px; line-height: 2; color: #888; margin-bottom: 30px;
+    }
+    .about-images {
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+      aspect-ratio: 16/9;
+    }
+    .about-images .img-large { grid-row: 1 / 3; overflow: hidden; }
+    .about-images .img-sm { overflow: hidden; }
+    .about-images .img-large img,
+    .about-images .img-sm img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* ===== REASONS ===== */
+    .reasons { padding: 50px 20px; background: #ece6df; }
+    .reasons-inner { max-width: 700px; margin: 0 auto; }
+    .reasons-title { text-align: center; margin-bottom: 25px; }
+    .reasons-title span {
+      display: inline-block; background: #4a4540; color: #fff;
+      padding: 10px 30px; font-size: 15px; font-weight: 700;
+      letter-spacing: 2px; border-radius: 30px;
+    }
+    .reason-item {
+      display: flex; align-items: center; gap: 15px; padding: 14px 0;
+    }
+    .reason-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px; font-weight: 700; color: #333; flex-shrink: 0;
+    }
+    .reason-sep { width: 2px; height: 22px; background: #333; flex-shrink: 0; }
+    .reason-text { font-size: 15px; font-weight: 700; color: #333; }
+    .reasons-desc { margin-top: 20px; font-size: 12px; color: #777; line-height: 2; }
+
+    /* ===== WORKS ===== */
+    .works { padding: 60px 20px 40px; }
+    .works-inner { max-width: 700px; margin: 0 auto; }
+    .works-header { text-align: center; margin-bottom: 35px; }
+    .works-header-line {
+      display: flex; align-items: center; justify-content: center;
+      gap: 15px; margin-bottom: 3px;
+    }
+    .works-header-line::before,
+    .works-header-line::after { content: ''; width: 60px; height: 1px; background: #ccc; }
+    .works-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px; font-weight: 600; letter-spacing: 3px; color: #333;
+    }
+    .works-header p { font-size: 12px; color: #999; letter-spacing: 3px; }
+
+    /* メイン内装工事 */
+    .main-service {
+      background: #f9f6f2; padding: 25px; margin-bottom: 30px;
+      border-radius: 4px; border-left: 4px solid #4a4540;
+    }
+    .main-service h3 {
+      font-size: 22px; font-weight: 700; color: #333;
+      margin-bottom: 5px; letter-spacing: 1px;
+    }
+    .main-service .main-badge {
+      display: inline-block; background: #4a4540; color: #fff;
+      font-size: 10px; font-weight: 700; padding: 2px 10px;
+      border-radius: 2px; margin-bottom: 12px; letter-spacing: 1px;
+    }
+    .main-service > p {
+      font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.9;
+    }
+    .main-service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+    .main-service-grid li {
+      font-size: 13px; color: #444; line-height: 2; padding-left: 14px; position: relative;
+    }
+    .main-service-grid li::before { content: '・'; position: absolute; left: 0; }
+    .main-service-images {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px;
+    }
+    .main-service-images img {
+      width: 100%; height: 160px; object-fit: cover; border-radius: 2px;
+    }
+    .main-service-price {
+      margin-top: 15px; background: #fff; padding: 15px; border-radius: 4px;
+    }
+    .main-service-price h4 {
+      font-size: 13px; font-weight: 700; color: #4a4540; margin-bottom: 8px;
+    }
+    .price-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 20px; }
+    .price-list li {
+      font-size: 12px; color: #555; line-height: 2;
+      display: flex; justify-content: space-between;
+    }
+    .price-list li span { font-weight: 700; color: #333; }
+
+    /* 通常サービス行 */
+    .service-row {
+      display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start;
+    }
+    .service-row.reverse { flex-direction: row-reverse; }
+    .service-row .service-img {
+      width: 48%; flex-shrink: 0; aspect-ratio: 3/2; overflow: hidden; border-radius: 2px;
+    }
+    .service-row .service-img img { width: 100%; height: 100%; object-fit: cover; }
+    .service-row .service-text { width: 52%; padding: 5px 0; }
+    .service-row .service-text h3 {
+      font-size: 16px; font-weight: 700; color: #333; margin-bottom: 6px;
+    }
+    .service-row .service-text ul li {
+      font-size: 12px; color: #555; line-height: 1.9; padding-left: 14px; position: relative;
+    }
+    .service-row .service-text ul li::before { content: '・'; position: absolute; left: 0; }
+
+    /* その他 */
+    .service-others { margin-top: 30px; }
+    .service-others h3 {
+      font-size: 18px; font-weight: 700; color: #333;
+      margin-bottom: 15px; text-align: center;
+    }
+    .service-others-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 20px;
+    }
+    .service-others-grid li {
+      font-size: 12px; color: #555; line-height: 2.2; padding-left: 14px; position: relative;
+    }
+    .service-others-grid li::before { content: '・'; position: absolute; left: 0; }
+
+    /* ===== CTA ===== */
+    .cta { padding: 50px 20px; background: #b0a595; text-align: center; }
+    .cta-heading {
+      color: #fff; font-size: 22px; font-weight: 700;
+      line-height: 1.7; margin-bottom: 5px; letter-spacing: 1px;
+    }
+    .cta-sub { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 25px; }
+    .btn-line {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      background: #06C755; color: #fff;
+      padding: 22px 30px; border-radius: 8px;
+      font-size: 18px; font-weight: 700; letter-spacing: 2px;
+      max-width: 500px; margin: 0 auto; transition: opacity 0.3s;
+    }
+    .btn-line:hover { opacity: 0.9; }
+    .btn-line .line-icon-wrap {
+      width: 44px; height: 44px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-line .line-icon-wrap svg { width: 44px; height: 44px; fill: #fff; }
+
+    /* ===== FOOTER ===== */
+    .footer { padding: 50px 20px 0; background: #fff; text-align: center; }
+    .footer-logo { margin-bottom: 25px; }
+    .footer-logo img { height: 150px; width: auto; margin: 0 auto; }
+    .footer-company {
+      font-size: 16px; font-weight: 700; color: #333;
+      margin-bottom: 15px; letter-spacing: 2px;
+    }
+    .footer-info { font-size: 13px; color: #666; line-height: 2; margin-bottom: 30px; }
+    .footer-copyright {
+      background: #555; color: rgba(255,255,255,0.7);
+      font-size: 11px; padding: 15px 20px; letter-spacing: 0.5px;
+      margin: 0 -20px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 769px) {
+      .hero { height: 75vh; max-height: 700px; }
+      .hero-logo img { height: 80px; }
+      .hero-line-btn { width: 65px; height: 65px; }
+      .hero-line-btn svg { width: 40px; height: 40px; }
+      .hamburger { width: 40px; gap: 8px; }
+      .hamburger span { height: 3px; }
+      .hero-line-label { font-size: 11px; }
+      .about-heading { font-size: 24px; }
+      .about-label { padding: 16px 22px; font-size: 17px; }
+      .about { padding: 60px 30px 50px; }
+      .reasons { padding: 60px 30px; }
+      .works { padding: 70px 30px 50px; }
+      .main-service-images img { height: 200px; }
+      .footer-logo img { height: 160px; }
+    }
+    @media (max-width: 480px) {
+      .hero { height: 50vh; min-height: 280px; }
+      .hero-logo img { height: 45px; }
+      .hero-line-btn { width: 48px; height: 48px; }
+      .hero-line-btn svg { width: 28px; height: 28px; }
+      .about-top { flex-direction: column; gap: 10px; }
+      .about-heading { font-size: 17px; }
+      .about-label { padding: 10px 16px; font-size: 14px; }
+      .about-images { aspect-ratio: 4/3; }
+      .reason-text { font-size: 13px; }
+      .service-row { flex-direction: column !important; }
+      .service-row .service-img, .service-row .service-text { width: 100%; }
+      .main-service-grid { grid-template-columns: 1fr; }
+      .service-others-grid { grid-template-columns: 1fr 1fr; }
+      .cta-heading { font-size: 18px; }
+      .cta-sub { font-size: 15px; }
+      .btn-line { font-size: 15px; padding: 16px 20px; }
+      .price-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <a href="#" class="hero-logo">
+      <img src="assets/logo-transparent-v2.png" alt="CONNECT REA Co.,LTD">
+    </a>
+    <div class="hero-nav">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <a href="https://line.me/R/ti/p/@662cphfn" target="_blank" rel="noopener">
+        <div class="hero-line-btn">
+          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.51.43-.595a.67.67 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </div>
+        <div class="hero-line-label">お問合せ</div>
+      </a>
+    </div>
+
+    <div class="slider-container">
+      <div class="slider-slides">
+        <div class="slider-slide active"><img src="assets/hero-1.jpg" alt="モダンなダイニング内装"></div>
+        <div class="slider-slide"><img src="assets/hero-2.jpg" alt="リビングルーム内装"></div>
+        <div class="slider-slide"><img src="assets/interior-japanese.jpg" alt="和室の美しい内装"></div>
+        <div class="slider-slide"><img src="assets/family-kitchen.jpg" alt="リノベーション後のキッチン"></div>
+        <div class="slider-slide"><img src="assets/bathroom.jpg" alt="水回りリフォーム"></div>
+      </div>
+      <div class="slider-dots" id="sliderDots">
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+        <div class="slider-dot" data-index="2"></div>
+        <div class="slider-dot" data-index="3"></div>
+        <div class="slider-dot" data-index="4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-top">
+        <div class="about-label">About</div>
+        <h2 class="about-heading">
+          小さな修繕から大規模リフォームまで<br>
+          内装工事のことならコネクトリア
+        </h2>
+      </div>
+      <p class="about-desc">
+        いつまでも大切な我が家を守っていく為には、リフォームや修繕は不可欠です。<br>
+        私たちは皆さまの人生に寄り添う住まいづくりをご提供したいという想いで、徹底した一貫施工管理を行っています。<br><br>
+        内装工事を専門として取り扱ってきた職人達が、同業他社も驚く価格・品質をご提供します。
+      </p>
+      <p class="about-note">
+        安心してご依頼をいただくために、プランニングから工事、アフターフォローまで<br>
+        自社で管理施工を行っております。<br>
+        ご自宅に関する些細なお悩みも、お気軽にご相談ください。
+      </p>
+      <div class="about-images">
+        <div class="img-large">
+          <img src="assets/hero-2.jpg" alt="リビングルーム内装">
+        </div>
+        <div class="img-sm">
+          <img src="assets/interior-japanese.jpg" alt="和室内装">
+        </div>
+        <div class="img-sm">
+          <img src="assets/bathroom.jpg" alt="水回り内装">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REASONS ===== -->
+  <section class="reasons">
+    <div class="reasons-inner">
+      <div class="reasons-title"><span>コネクトリアが選ばれる理由</span></div>
+      <div class="reason-item">
+        <div class="reason-num">01</div><div class="reason-sep"></div>
+        <div class="reason-text">一括管理施工だから高品質 &amp; 低コストを実現</div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">02</div><div class="reason-sep"></div>
+        <div class="reason-text">小さな工事から大規模工事まで任せることができる</div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-num">03</div><div class="reason-sep"></div>
+        <div class="reason-text">相見積もり・他社との比較を推奨する</div>
+      </div>
+      <p class="reasons-desc">
+        安心してご依頼をいただくために、プランニングから工事、アフターフォローまで自社で管理施工を行っております。<br>
+        ご自宅に関する些細なお悩みも、お気軽にご相談ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== WORKS ===== -->
+  <section class="works">
+    <div class="works-inner">
+      <div class="works-header">
+        <div class="works-header-line"><h2>Works</h2></div>
+        <p>事業内容</p>
+      </div>
+
+      <!-- ★ 内装工事（メイン） -->
+      <div class="main-service">
+        <span class="main-badge">MAIN SERVICE</span>
+        <h3>内装工事</h3>
+        <p>
+          プロの技術で確実に美しい仕上がりを実現。クロス・床・天井の張り替えから間取り変更、フルリノベーションまで、内装に関するあらゆる工事に対応。スピーディーな対応力で素早く施工を完了し、無駄なコストをかけずに適正価格でご提供します。
+        </p>
+        <ul class="main-service-grid">
+          <li>リノベーション</li>
+          <li>クロス貼り替え工事</li>
+          <li>畳替え・フローリング工事</li>
+          <li>クッションフロア張り替え</li>
+          <li>タイルカーペット張り替え</li>
+          <li>天井ボード張り替え</li>
+          <li>部屋の増設・間取り変更工事</li>
+          <li>和室 / 洋室の変更</li>
+          <li>床、壁、天井の張替え</li>
+          <li>内装解体</li>
+          <li>内装部分補修</li>
+          <li>塗装工事</li>
+        </ul>
+        <div class="main-service-images">
+          <img src="assets/hero-1.jpg" alt="内装工事 施工イメージ">
+          <img src="assets/family-kitchen.jpg" alt="内装工事 施工イメージ">
+        </div>
+        <div class="main-service-price">
+          <h4>内装工事 参考価格（税別）</h4>
+          <ul class="price-list">
+            <li>クロス貼り替え <span>790円~/m</span></li>
+            <li>クッションフロア <span>2,900円~/m</span></li>
+            <li>フローリング <span>12,000円~/m</span></li>
+            <li>タイルカーペット <span>3,000円~/m</span></li>
+            <li>畳表替え <span>4,800円~/畳</span></li>
+            <li>襖貼り替え <span>3,200円~/枚</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 原状回復工事 -->
+      <div class="service-row">
+        <div class="service-text">
+          <h3>原状回復工事</h3>
+          <ul>
+            <li>賃貸物件の原状回復</li>
+            <li>オフィス・事務所の原状回復</li>
+            <li>退去立会い</li>
+            <li>解体・塗装・クロス・カーペット工事</li>
+            <li>残置物撤去</li>
+          </ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="原状回復工事"></div>
+      </div>
+
+      <!-- 水回り工事 -->
+      <div class="service-row reverse">
+        <div class="service-text">
+          <h3>水回り工事</h3>
+          <ul><li>トイレ / 浴室 / 洗面所工事</li><li>本体交換～内装工事</li><li>水道トラブル対応</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/bathroom.jpg" alt="水回り工事"></div>
+      </div>
+
+      <!-- キッチン工事 -->
+      <div class="service-row">
+        <div class="service-text">
+          <h3>キッチン工事</h3>
+          <ul><li>システムキッチン取替え</li><li>食器棚、ハッチの作成</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="キッチン工事"></div>
+      </div>
+
+      <!-- 屋根・外壁工事 -->
+      <div class="service-row reverse">
+        <div class="service-text">
+          <h3>屋根・外壁工事</h3>
+          <ul><li>屋根の貼り替え</li><li>屋根の塗り替え、補修</li><li>外壁の塗装、補修</li><li>雨漏り修理</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="屋根・外壁工事"></div>
+      </div>
+
+      <!-- 電気工事・取付 -->
+      <div class="service-row">
+        <div class="service-text">
+          <h3>電気工事・取付</h3>
+          <ul><li>コンセント増設</li><li>エアコン取付工事</li><li>照明器具取付工事</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="電気工事"></div>
+      </div>
+
+      <!-- 外構工事 -->
+      <div class="service-row reverse">
+        <div class="service-text">
+          <h3>外構工事</h3>
+          <ul><li>門扉取替え</li><li>ブロック塀取替え</li><li>カーポート施工</li><li>ウッドデッキ施工</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="外構工事"></div>
+      </div>
+
+      <!-- ハウスクリーニング -->
+      <div class="service-row">
+        <div class="service-text">
+          <h3>ハウスクリーニング</h3>
+          <ul><li>カビ除去</li><li>気になる箇所の清掃</li><li>入退去時のハウスクリーニング</li><li>庭の手入れ</li></ul>
+        </div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="ハウスクリーニング"></div>
+      </div>
+
+      <!-- 不動産管理 -->
+      <div class="service-row reverse">
+        <div class="service-text"><h3>不動産管理</h3></div>
+        <div class="service-img"><img src="assets/family-kitchen.jpg" alt="不動産管理"></div>
+      </div>
+
+      <!-- その他 -->
+      <div class="service-others">
+        <h3>その他</h3>
+        <ul class="service-others-grid">
+          <li>雨樋の修理</li>
+          <li>床下収納の取付</li>
+          <li>カメラ付きインターホンへの取替え</li>
+          <li>蜂の巣撤去</li>
+          <li>床、壁、天井の張替え</li>
+          <li>物置の設置</li>
+          <li>シロアリ、害虫駆除</li>
+          <li>防犯カメラの設置</li>
+          <li>断熱窓、断熱扉への交換</li>
+          <li>駐車場の増設</li>
+          <li>玄関タイルの清掃</li>
+          <li>勝手口増設</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <p class="cta-heading">まずはお気軽に公式LINEからお問合せください</p>
+    <p class="cta-sub">24時間ご相談受付中!</p>
+    <a href="https://line.me/R/ti/p/@662cphfn" class="btn-line" target="_blank" rel="noopener">
+      <span class="line-icon-wrap">
+        <svg viewBox="0 0 120 120"><path d="M60 14C33.5 14 12 31.2 12 52.5c0 19 17 35 40 38 1.5.36 3.6 1 4.2 2.3.5 1.2.3 3 .15 4.2l-.65 4c-.18 1.2-.95 4.7 4.15 2.55 5.1-2.13 27.4-16.1 37.35-27.6C103.8 69.4 108 61.3 108 52.5 108 31.2 86.5 14 60 14z" fill="#fff"/><path d="M49.6 44.8h-2.4c-.7 0-1.25.56-1.25 1.25v14.9c0 .7.55 1.25 1.25 1.25h2.4c.7 0 1.25-.55 1.25-1.25V46.05c0-.7-.55-1.25-1.25-1.25zm19.95 0h-2.4c-.7 0-1.25.56-1.25 1.25v8.85l-6.85-9.55a1.32 1.32 0 00-.15-.17l-.01-.01a.98.98 0 00-.12-.1l-.04-.03-.1-.06-.05-.03-.1-.04-.06-.02-.1-.03-.07-.01-.1-.01h-2.6c-.7 0-1.25.56-1.25 1.25v14.9c0 .7.55 1.25 1.25 1.25h2.4c.7 0 1.25-.55 1.25-1.25v-8.85l6.87 9.57c.1.15.23.27.37.36l.03.02.09.04.06.03.08.03.09.03.04.01.12.02h2.52c.7 0 1.25-.55 1.25-1.25V46.05c0-.7-.55-1.25-1.25-1.25zm-26.1 12.9h-5.5V46.05c0-.7-.56-1.25-1.25-1.25h-2.4c-.7 0-1.25.56-1.25 1.25v14.9c0 .33.13.63.34.86.01.01.02.03.04.04.22.2.52.34.86.34h9.16c.7 0 1.25-.55 1.25-1.25v-2.4c0-.69-.55-1.24-1.25-1.24zm34.65-11.65H68.94c-.7 0-1.25.56-1.25 1.25v14.9c0 .33.14.64.35.86l.03.03c.22.21.53.35.87.35h9.16c.7 0 1.25-.55 1.25-1.25v-2.4c0-.69-.55-1.24-1.25-1.24H73.6v-2.52h4.5c.7 0 1.25-.56 1.25-1.25v-2.4c0-.7-.55-1.25-1.25-1.25h-4.5V47.8h4.5c.7 0 1.25-.56 1.25-1.26v-2.4c0-.69-.55-1.24-1.25-1.24z" fill="#06C755"/></svg>
+      </span>
+      LINE でのご相談はこちら
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="assets/logo-footer-v2.png" alt="CONNECT REA Co.,LTD">
+    </div>
+    <p class="footer-company">株式会社 コネクトリア</p>
+    <div class="footer-info">
+      <p>福岡県田川市伊田千代町1-18</p>
+      <p>TEL 0947-23-2570</p>
+    </div>
+    <div class="footer-copyright">Copyright CONECTREA Co.,ltd</div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let current = 0, timer;
+    function goTo(i) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+    function startAuto() { timer = setInterval(() => goTo(current + 1), 4000); }
+    function resetAuto() { clearInterval(timer); startAuto(); }
+    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
+    startAuto();
+  </script>
+</body>
+</html>
