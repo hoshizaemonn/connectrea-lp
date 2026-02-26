@@ -183,10 +183,10 @@
     .feature-img img { width: 100%; height: 100%; object-fit: cover; }
     .feature-types { margin-top: 28px; padding-top: 20px; border-top: 1px solid #e5e0da; }
     .feature-types h4 { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 12px; letter-spacing: 1px; }
-    .feature-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px; }
+    .feature-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
     .feature-types-grid li {
-      font-size: 15px; color: #555; line-height: 2.2;
-      padding-left: 16px; position: relative; font-weight: 400;
+      font-size: 14px; color: #555; line-height: 1.8;
+      padding: 4px 0 4px 16px; position: relative; font-weight: 400;
     }
     .feature-types-grid li::before { content: '・'; position: absolute; left: 0; }
 
@@ -222,13 +222,13 @@
 
     /* ===== CTA ===== */
     .cta { padding: 50px 28px; background: #b5aba2; text-align: center; }
-    .cta-heading { color: #fff; font-size: 20px; font-weight: 700; line-height: 1.7; margin-bottom: 6px; letter-spacing: 1px; }
-    .cta-sub { color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 28px; }
+    .cta-heading { color: #fff; font-size: 18px; font-weight: 700; line-height: 1.7; margin-bottom: 6px; letter-spacing: 0.5px; }
+    .cta-sub { color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 28px; }
     .btn-line {
       display: flex; align-items: center; justify-content: center; gap: 16px;
       background: #06C755; color: #fff;
-      padding: 22px 28px; border-radius: 4px;
-      font-size: 18px; font-weight: 700; letter-spacing: 2px;
+      padding: 18px 24px; border-radius: 4px;
+      font-size: 16px; font-weight: 700; letter-spacing: 1px;
       max-width: 100%; margin: 0 auto;
     }
     .btn-line:hover { opacity: 0.9; }
@@ -241,7 +241,7 @@
     /* ===== FOOTER ===== */
     .footer { padding: 50px 28px 0; background: #fff; text-align: center; }
     .footer-logo { margin-bottom: 22px; }
-    .footer-logo img { height: 120px; width: auto; margin: 0 auto; }
+    .footer-logo img { height: 85px; width: auto; margin: 0 auto; }
     .footer-company { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 12px; letter-spacing: 3px; }
     .footer-info { font-size: 13px; color: #666; line-height: 2; margin-bottom: 28px; }
     .footer-copyright { background: #555; color: rgba(255,255,255,0.7); font-size: 11px; padding: 14px 28px; margin: 0 -28px; }
@@ -259,7 +259,7 @@
     .floating-contact-sp { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #06C755; }
     .floating-contact-sp a {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      color: #fff; padding: 14px 20px; font-size: 15px; font-weight: 700;
+      color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 700;
     }
     .floating-contact-sp svg { width: 24px; height: 24px; }
 
@@ -340,9 +340,9 @@
       .flow { padding: 40px 20px; }
       .faq { padding: 40px 20px; }
       .cta { padding: 40px 20px; }
-      .cta-heading { font-size: 17px; }
-      .cta-sub { font-size: 17px; }
-      .btn-line { font-size: 15px; padding: 18px 16px; }
+      .cta-heading { font-size: 16px; }
+      .cta-sub { font-size: 16px; }
+      .btn-line { font-size: 14px; padding: 16px 14px; }
       .footer { padding: 40px 20px 0; }
       .footer-copyright { margin: 0 -20px; }
     }
@@ -457,8 +457,7 @@
         <p>お任せいただける工事の一例</p>
       </div>
       <p class="works-examples-desc">
-        コネクトリアでは、住まいの内装工事に必要なプランニングから施工完了、<br>
-        アフターフォローまで一括で対応可能です。
+        コネクトリアでは、<br>住まいの内装工事に必要なプランニングから施工完了、<br>アフターフォローまで一括で対応可能です。
       </p>
       <div class="works-grid">
         <div class="works-grid-item"><div class="grid-img"><img src="assets/wallpaper-work.jpg" alt="クロス貼り替え"></div><div class="grid-name">クロス貼り替え</div></div>
@@ -507,7 +506,7 @@
         <h4>対応工事一覧</h4>
         <ul class="feature-types-grid">
           <li>賃貸物件の原状回復</li>
-          <li>オフィス・事務所の原状回復</li>
+          <li>オフィス、事務所の原状回復</li>
           <li>事故物件の原状回復</li>
           <li>退去立会い代行</li>
           <li>内装解体</li>
@@ -541,15 +540,15 @@
         <h4>対応工事一覧</h4>
         <ul class="feature-types-grid">
           <li>クロス貼り替え</li>
-          <li>フローリング張り替え</li>
-          <li>クッションフロア張り替え</li>
-          <li>タイルカーペット張り替え</li>
+          <li>フローリング張替え</li>
+          <li>クッションフロア張替え</li>
+          <li>タイルカーペット張替え</li>
           <li>塩ビタイル貼り替え</li>
-          <li>畳替え・襖貼り替え</li>
+          <li>畳替え、襖貼り替え</li>
           <li>水回り工事</li>
           <li>キッチン工事</li>
-          <li>屋根・外壁工事</li>
-          <li>電気工事・取付</li>
+          <li>屋根、外壁工事</li>
+          <li>電気工事、取付</li>
           <li>外構工事</li>
           <li>塗装工事</li>
         </ul>
@@ -585,7 +584,7 @@
           <li>水回りクリーニング</li>
           <li>カビ除去</li>
           <li>庭の手入れ</li>
-          <li>フローリング・建具リペア補修</li>
+          <li>フローリング、建具リペア補修</li>
         </ul>
       </div>
     </div>
