@@ -29,7 +29,7 @@
       font-family: 'ShinGo', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
       color: #333; line-height: 1.8; background: #fff;
       -webkit-font-smoothing: antialiased;
-      padding-top: 60px; padding-bottom: 56px;
+      padding-top: 60px; padding-bottom: 42px;
     }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     img { max-width: 100%; height: auto; display: block; }
@@ -96,7 +96,7 @@
     /* ===== ABOUT（PDFデザイン） ===== */
     .about { padding: 50px 28px; }
     .about-inner { max-width: 900px; margin: 0 auto; }
-    .about-top { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+    .about-top { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; }
     .about-label {
       flex-shrink: 0; background: #3d3a36; color: #fff;
       width: 95px; height: 95px;
@@ -107,6 +107,11 @@
     }
     .about-heading { font-size: 20px; font-weight: 700; line-height: 1.85; color: #333; letter-spacing: 0.5px; }
     .about-desc { font-size: 15px; line-height: 2.0; color: #333; font-weight: 500; margin-bottom: 0; }
+    .about-text-pc { display: none; }
+    .about-heading-pc { display: none; }
+    .about-heading-sp { display: block; }
+    .about-desc-pc { display: none; }
+    .about-desc-sp { display: block; }
     .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 30px; }
     .about-images .img-large { grid-column: 1 / 3; overflow: hidden; }
     .about-images .img-large img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
@@ -258,10 +263,10 @@
     .floating-contact-pc svg { width: 22px; height: 22px; }
     .floating-contact-sp { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #06C755; }
     .floating-contact-sp a {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      color: #fff; padding: 6px 20px; font-size: 13px; font-weight: 700;
     }
-    .floating-contact-sp svg { width: 22px; height: 22px; }
+    .floating-contact-sp svg { width: 18px; height: 18px; }
 
     /* ===== PC (769px+) ===== */
     @media (min-width: 769px) {
@@ -272,10 +277,13 @@
       .hero { height: 70vh; max-height: 650px; }
 
       .about { padding: 80px 40px; }
-      .about-top { gap: 28px; }
+      .about-top { flex-wrap: wrap; gap: 28px; margin-bottom: 0; }
       .about-label { width: 130px; height: 130px; font-size: 26px; }
-      .about-heading { font-size: 28px; }
-      .about-desc { font-size: 15px; }
+      .about-text-pc { display: flex; flex-direction: column; justify-content: center; flex: 1; }
+      .about-heading-sp { display: none; }
+      .about-heading-pc { display: block; font-size: 28px; }
+      .about-desc-pc { display: block; font-size: 15px; margin-top: 12px; }
+      .about-desc-sp { display: none; }
 
       .reasons { padding: 80px 40px; }
       .reasons-title span { font-size: 24px; padding: 22px 30px; }
@@ -295,10 +303,6 @@
       .feature-text h3 { font-size: 28px; }
       .feature-text p { font-size: 15px; }
       .feature-types-grid li { font-size: 14px; }
-
-      .about-label { width: 130px; height: 130px; font-size: 26px; }
-      .about-heading { font-size: 28px; }
-      .about-desc { font-size: 15px; line-height: 2.0; }
 
       .flow { padding: 80px 40px; }
       .flow-num { font-size: 32px; }
@@ -413,9 +417,17 @@
     <div class="about-inner">
       <div class="about-top">
         <div class="about-label">About</div>
-        <h2 class="about-heading">より快適な住まいへ</h2>
+        <h2 class="about-heading about-heading-sp">より快適な住まいへ</h2>
+        <div class="about-text-pc">
+          <h2 class="about-heading about-heading-pc">より快適な住まいへ</h2>
+          <p class="about-desc about-desc-pc">
+            住まいの内装工事とは、クロスや床の貼り替え、水回りの改修、設備の交換など、暮らしの空間をより快適に整えるための工事です。<br>
+            住まいは、家族の暮らしを支え、日々の生活の質を左右する大切な場所。<br>
+            コネクトリアでは、プロの技術と適正価格で、理想の住空間をご提案します。
+          </p>
+        </div>
       </div>
-      <p class="about-desc">
+      <p class="about-desc about-desc-sp">
         住まいの内装工事とは、クロスや床の貼り替え、水回りの改修、設備の交換など、暮らしの空間をより快適に整えるための工事です。<br>
         住まいは、家族の暮らしを支え、日々の生活の質を左右する大切な場所。<br>
         コネクトリアでは、プロの技術と適正価格で、理想の住空間をご提案します。
