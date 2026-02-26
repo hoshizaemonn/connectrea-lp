@@ -29,7 +29,7 @@
       font-family: 'ShinGo', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
       color: #333; line-height: 1.8; background: #fff;
       -webkit-font-smoothing: antialiased;
-      padding-top: 60px; padding-bottom: 52px;
+      padding-top: 60px; padding-bottom: 56px;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
@@ -99,14 +99,14 @@
     .about-text { flex: 1; min-width: 0; }
     .about-label {
       flex-shrink: 0; background: #3d3a36; color: #fff;
-      width: 95px; height: 95px;
+      width: 80px; height: 80px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px; font-weight: 600; letter-spacing: 2px; line-height: 1;
+      font-size: 17px; font-weight: 600; letter-spacing: 2px; line-height: 1;
       box-shadow: inset 0 0 0 5px #3d3a36, inset 0 0 0 6px rgba(255,255,255,0.25);
     }
-    .about-heading { font-size: 20px; font-weight: 700; line-height: 1.85; color: #333; letter-spacing: 0.5px; margin-bottom: 12px; }
-    .about-desc { font-size: 15px; line-height: 2.2; color: #333; font-weight: 500; }
+    .about-heading { font-size: 18px; font-weight: 700; line-height: 1.7; color: #333; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .about-desc { font-size: 14px; line-height: 1.9; color: #333; font-weight: 500; }
     .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 30px; }
     .about-images .img-large { grid-column: 1 / 3; overflow: hidden; }
     .about-images .img-large img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
@@ -182,11 +182,11 @@
     .feature-img { width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 3px; }
     .feature-img img { width: 100%; height: 100%; object-fit: cover; }
     .feature-types { margin-top: 28px; padding-top: 20px; border-top: 1px solid #e5e0da; }
-    .feature-types h4 { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 12px; letter-spacing: 1px; }
-    .feature-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+    .feature-types h4 { font-size: 14px; font-weight: 700; color: #333; margin-bottom: 8px; letter-spacing: 1px; }
+    .feature-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
     .feature-types-grid li {
-      font-size: 14px; color: #555; line-height: 1.8;
-      padding: 4px 0 4px 16px; position: relative; font-weight: 400;
+      font-size: 12px; color: #555; line-height: 1.7;
+      padding: 3px 0 3px 14px; position: relative; font-weight: 400;
     }
     .feature-types-grid li::before { content: '・'; position: absolute; left: 0; }
 
@@ -256,12 +256,13 @@
     }
     .floating-contact-pc a:hover { transform: translateY(-2px); }
     .floating-contact-pc svg { width: 22px; height: 22px; }
-    .floating-contact-sp { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #06C755; }
+    .floating-contact-sp { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; padding: 8px 20px; background: transparent; }
     .floating-contact-sp a {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 700;
+      color: #fff; padding: 12px 20px; font-size: 14px; font-weight: 700;
+      background: #06C755; border-radius: 4px;
     }
-    .floating-contact-sp svg { width: 24px; height: 24px; }
+    .floating-contact-sp svg { width: 22px; height: 22px; }
 
     /* ===== PC (769px+) ===== */
     @media (min-width: 769px) {
@@ -294,6 +295,11 @@
       .feature-img { width: 45%; flex-shrink: 0; }
       .feature-text h3 { font-size: 28px; }
       .feature-text p { font-size: 15px; }
+      .feature-types-grid li { font-size: 14px; }
+
+      .about-label { width: 130px; height: 130px; font-size: 26px; }
+      .about-heading { font-size: 28px; }
+      .about-desc { font-size: 15px; line-height: 2.2; }
 
       .flow { padding: 80px 40px; }
       .flow-num { font-size: 32px; }
@@ -457,7 +463,7 @@
         <p>お任せいただける工事の一例</p>
       </div>
       <p class="works-examples-desc">
-        コネクトリアでは、<br>住まいの内装工事に必要なプランニングから施工完了、<br>アフターフォローまで一括で対応可能です。
+        コネクトリアでは、住まいの内装工事に必要な<br>プランニングから施工完了、<br>アフターフォローまで一括で対応可能です。
       </p>
       <div class="works-grid">
         <div class="works-grid-item"><div class="grid-img"><img src="assets/wallpaper-work.jpg" alt="クロス貼り替え"></div><div class="grid-name">クロス貼り替え</div></div>
