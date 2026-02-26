@@ -29,7 +29,7 @@
       font-family: 'ShinGo', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
       color: #333; line-height: 1.8; background: #fff;
       -webkit-font-smoothing: antialiased;
-      padding-top: 60px; padding-bottom: 48px;
+      padding-top: 60px; padding-bottom: 54px;
     }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     img { max-width: 100%; height: auto; display: block; }
@@ -260,15 +260,10 @@
     .floating-contact-pc svg { width: 22px; height: 22px; }
     .floating-contact-sp { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: #06C755; }
     .floating-contact-sp a {
-      display: flex; align-items: center; justify-content: center; gap: 12px;
-      color: #fff; padding: 8px 20px; font-size: 16px; font-weight: 700; letter-spacing: 1px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      color: #fff; padding: 12px 20px; font-size: 15px; font-weight: 700; letter-spacing: 1px;
     }
-    .floating-contact-sp .line-badge {
-      display: inline-flex; align-items: center; justify-content: center;
-      background: #fff; color: #06C755; border-radius: 6px;
-      padding: 6px 14px; font-size: 14px; font-weight: 900; letter-spacing: 1px;
-      font-family: 'Montserrat', 'Arial Black', sans-serif; line-height: 1;
-    }
+    .floating-contact-sp svg { width: 28px; height: 28px; }
 
     /* ===== PC (769px+) ===== */
     @media (min-width: 769px) {
@@ -676,7 +671,7 @@
   <!-- 固定お問い合わせ SP -->
   <div class="floating-contact-sp">
     <a href="https://line.me/R/ti/p/@662cphfn" target="_blank" rel="noopener">
-      <span class="line-badge">LINE</span>
+      <svg viewBox="0 0 24 24" fill="#fff"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.51.43-.595a.67.67 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       LINEでお問い合わせ
     </a>
   </div>
